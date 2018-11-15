@@ -1,10 +1,10 @@
 import { Link } from '../routes';
 
-const Post =  ({ query }) => (
+const Post =  ({ stars }) => (
   <div className="flex-center position-ref full-height">
     <div className="content">
         <div className="title m-b-md">
-          { query.slug }
+          Count: {stars}
         </div>
 
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis accusamus sequi nisi, commodi aperiam numquam quis rem molestias nemo vitae! Aspernatur aut totam harum rem culpa ipsam quisquam quis earum.</p>
@@ -19,7 +19,9 @@ const Post =  ({ query }) => (
 );
 
 Post.getInitialProps = async ({ query }) => {
-  return { query }
+  const res = await fetch('https://api.github.com/repos/zeit/next.js')
+  const json = await res.json()
+  return { stars: json.stargazers_count }
 };
 
 
