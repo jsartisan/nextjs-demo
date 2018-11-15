@@ -1,7 +1,12 @@
 import { Link } from '../routes';
+import Head from 'next/head';
 
 const About =  () => (
   <div className="flex-center position-ref full-height">
+    <Head>
+      <title>About - NextJS</title>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    </Head>
     <div className="content">
         <div className="title m-b-md">
           About
