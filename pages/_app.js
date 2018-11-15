@@ -1,6 +1,6 @@
 import App, { Container } from 'next/app';
 
-import '../assets/css/style.css';
+import '../assets/sass/style.scss';
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
