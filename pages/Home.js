@@ -1,12 +1,19 @@
 import { Link, Router} from '../routes';
 
-export default () => (
-  <div>
-    <h1>NextJS</h1>
-    <ul>
-      <li><Link route="home"><a>Home</a></Link></li>
-      <li><a onClick={() => Router.pushRoute('about')}>About</a></li>
-      <li><Link route="posts" params={{ slug: 'best-post-ever'}}><a>Post</a></Link></li>
-    </ul>
+const Home =  () => (
+  <div className="flex-center position-ref full-height">
+    <div className="content">
+        <div className="title m-b-md">
+          NextJS
+        </div>
+
+        <div className="links">
+          <Link route="home"><a>Home</a></Link>
+          <Link route="about"><a>About</a></Link>
+          <Link route="posts" params={{ slug: 'best-post-ever'}}><a>Post</a></Link>
+        </div>
+    </div>
   </div>
 );
+
+export default Home;
